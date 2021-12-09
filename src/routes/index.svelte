@@ -36,43 +36,46 @@
 
 <script>
   export let launches;
+
+  let linkClasses = "hover:text-purple-600 dark:hover:text-purple-400 hover:underline text-blue-700 dark:text-blue-200"
 </script>
 
 <h1 class="mb-4 text-center text-4xl text-gray-800 dark:text-gray-200">SpaceX Launches</h1>
 
 <p class="mb-3 text-gray-800 dark:text-gray-200">
-  This is an example <a
-    class="hover:text-purple-600 dark:hover:text-purple-400 hover:underline text-blue-700 dark:text-blue-200"
+  This is an example
+  <a 
+    class={linkClasses}
     target="_blank"
     rel="noopener"
-    href="https://svelte.dev">SvelteKit</a
-  >
+    href="https://svelte.dev">
+      SvelteKit</a>
   application fetching GraphQL data from the public
   <a
-    class="hover:text-purple-600 dark:hover:text-purple-400 hover:underline text-blue-700 dark:text-blue-200"
+    class={linkClasses}
     target="_blank"
     rel="noopener"
-    href="https://api.spacex.land/graphql">SpaceX API</a
-  >. View source on
+    href="https://api.spacex.land/graphql">
+      SpaceX API</a>.
+  View source on
   <a
-    class="hover:text-purple-600 dark:hover:text-purple-400 hover:underline text-blue-700 dark:text-blue-200"
+    class={linkClasses}
     target="_blank"
     rel="noopener"
-    href="https://github.com/leerob/sveltekit-graphql">GitHub</a
-  >.
+    href="https://github.com/leerob/sveltekit-graphql">
+    GitHub</a>.
 </p>
 
 <ul class="list-none p-0 mt-4">
   {#each launches as launch}
     <li class="rounded-md mb-3 bg-gray-600 hover:bg-gray-700 dark:bg-gray-400 dark:hover:bg-gray-500">
-      <a
+      <a 
         class="block px-3 py-3"
         target="_blank"
         rel="noopener"
-        href={launch.links.video_link}
-      >
-        <h2 class="text-blue-200 dark:text-blue-900">{launch.mission_name}</h2>
-        <p class="text-gray-100 dark:text-gray-900">{new Date(launch.launch_date_local).toLocaleString()}</p>
+        href={launch.links.video_link}>
+          <h2 class="text-blue-200 dark:text-blue-900">{launch.mission_name}</h2>
+          <p class="text-gray-100 dark:text-gray-900">{new Date(launch.launch_date_local).toLocaleString()}</p>
       </a>
     </li>
   {/each}

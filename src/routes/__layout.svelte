@@ -15,7 +15,7 @@
   }
 </script>
 
-<div class="container w-screen lg:w-2/3 mx-auto mt-5 px-20">
+<div class="container sm:w-screen lg:w-2/3 xl:w-1/2 mx-auto mt-5 px-12">
   <main>
     <button class="block mx-auto mb-6 rounded w-32 p-2 text-gray-200 dark:text-gray-800 bg-gray-600 dark:bg-gray-400"
             on:click={toggleDarkMode}>
@@ -23,7 +23,7 @@
     </button>
     
     <div>
-      <slot />
+      <slot></slot>
     </div>
   </main>
     
