@@ -4,10 +4,5 @@
 @tailwind utilities;
 
 body {
-    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
-      monospace;
-    background-color: #fafafa;
-    max-width: 650px;
-    margin: 32px auto;
-    padding: 0 16px;
+    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 }

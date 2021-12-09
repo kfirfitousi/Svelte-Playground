@@ -38,106 +38,51 @@
   export let launches;
 </script>
 
-<h1>SpaceX Launches</h1>
-<p>
+<h1 class="mb-4 text-center text-4xl text-gray-800 dark:text-gray-200">SpaceX Launches</h1>
+
+<p class="mb-3 text-gray-800 dark:text-gray-200">
   This is an example <a
-    class="link"
+    class="hover:text-purple-600 dark:hover:text-purple-400 hover:underline text-blue-700 dark:text-blue-200"
     target="_blank"
     rel="noopener"
     href="https://svelte.dev">SvelteKit</a
   >
   application fetching GraphQL data from the public
   <a
-    class="link"
+    class="hover:text-purple-600 dark:hover:text-purple-400 hover:underline text-blue-700 dark:text-blue-200"
     target="_blank"
     rel="noopener"
     href="https://api.spacex.land/graphql">SpaceX API</a
   >. View source on
   <a
-    class="link"
+    class="hover:text-purple-600 dark:hover:text-purple-400 hover:underline text-blue-700 dark:text-blue-200"
     target="_blank"
     rel="noopener"
     href="https://github.com/leerob/sveltekit-graphql">GitHub</a
   >.
 </p>
-<ul>
+
+<ul class="list-none p-0 mt-4">
   {#each launches as launch}
-    <li>
+    <li class="rounded-md mb-3 bg-gray-600 hover:bg-gray-700 dark:bg-gray-400 dark:hover:bg-gray-500">
       <a
-        class="card-link"
+        class="block px-3 py-3"
         target="_blank"
         rel="noopener"
         href={launch.links.video_link}
       >
-        <h2>{launch.mission_name}</h2>
-        <p>{new Date(launch.launch_date_local).toLocaleString()}</p>
+        <h2 class="text-blue-200 dark:text-blue-900">{launch.mission_name}</h2>
+        <p class="text-gray-100 dark:text-gray-900">{new Date(launch.launch_date_local).toLocaleString()}</p>
       </a>
     </li>
   {/each}
 </ul>
-<footer>
-  <p>
-    Created with <a
-      class="link"
-      target="_blank"
-      rel="noopener"
-      href="https://svelte.dev">SvelteKit</a
-    >
-    and deployed with
-    <a class="link" target="_blank" rel="noopener" href="https://vercel.com"
-      >▲ Vercel</a
-    >.
-  </p>
-</footer>
 
 <style>
-  :global(body) {
-    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
-      monospace;
-    background-color: #fafafa;
-    max-width: 650px;
-    margin: 32px auto;
-    padding: 0 16px;
-  }
-  h1 {
-    letter-spacing: -0.025em;
-  }
-  h2 {
-    font-size: 18px;
-  }
-  ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 32px;
-  }
   li {
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
-    margin-bottom: 16px;
-    background-color: white;
     transition: 0.15s box-shadow ease-in-out;
   }
   li:hover {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
-  }
-  p {
-    color: #666;
-    font-size: 14px;
-    line-height: 1.75;
-  }
-  a {
-    color: #0070f3;
-    text-decoration: none;
-  }
-  .card-link {
-    padding: 8px 24px;
-    display: block;
-  }
-  .link {
-    transition: 0.15s text-decoration ease-in-out;
-    color: #0761d1;
-  }
-  .link:hover {
-    text-decoration: underline;
   }
 </style>
