@@ -12,29 +12,12 @@
 
 <script>
   import '../app.css';
-  import { onMount } from 'svelte';
   import DarkModeSwitch from '$lib/components/DarkModeSwitch.svelte'
-
-  let dark;
-  
-  onMount(() => {
-    dark = localStorage.dark
-  })
-
-  const toggleDarkMode = () => {
-    localStorage.dark = (dark === 'true') ? 'false' : 'true'
-    dark = localStorage.dark
-    
-    dark === 'true' ? 
-      document.documentElement.classList.add('dark') :
-      document.documentElement.classList.remove('dark')
-  }
 </script>
-
 
 <div class="container sm:w-screen lg:w-2/3 xl:w-1/2 mx-auto mt-8 px-12">
   <div class="float-right">
-    <DarkModeSwitch on:click={toggleDarkMode} {dark}></DarkModeSwitch>
+    <DarkModeSwitch></DarkModeSwitch>
   </div>
 
   <main>
