@@ -1,30 +1,44 @@
+<svelte:head>
+  <script>
+    if (localStorage.dark === 'true' || (!('dark' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+      localStorage.dark = 'true'
+    } else {
+      document.documentElement.classList.remove('dark')
+      localStorage.dark = 'false'
+    }
+  </script>
+</svelte:head>
+
 <script>
   import '../app.css';
-  import { browser } from '$app/env'; 
+  import { onMount } from 'svelte';
+  import DarkModeSwitch from '$lib/components/DarkModeSwitch.svelte'
 
-  let dark = browser && localStorage.getItem('dark') || 'true';
+  let dark;
   
+  onMount(() => {
+    dark = localStorage.dark
+  })
+
   const toggleDarkMode = () => {
     localStorage.dark = (dark === 'true') ? 'false' : 'true'
-    dark = localStorage.getItem('dark')
+    dark = localStorage.dark
     
-    if (dark === 'true')
-      document.documentElement.classList.add('dark')
-    else
+    dark === 'true' ? 
+      document.documentElement.classList.add('dark') :
       document.documentElement.classList.remove('dark')
   }
 </script>
 
-<div class="container sm:w-screen lg:w-2/3 xl:w-1/2 mx-auto mt-5 px-12">
+
+<div class="container sm:w-screen lg:w-2/3 xl:w-1/2 mx-auto mt-8 px-12">
+  <div class="float-right">
+    <DarkModeSwitch on:click={toggleDarkMode} {dark}></DarkModeSwitch>
+  </div>
+
   <main>
-    <button class="block mx-auto mb-6 rounded w-32 p-2 text-gray-200 dark:text-gray-800 bg-gray-600 dark:bg-gray-400"
-            on:click={toggleDarkMode}>
-      {dark === 'true' ? 'Light Mode' : 'Dark Mode'}
-    </button>
-    
-    <div>
-      <slot></slot>
-    </div>
+    <slot></slot>
   </main>
     
   <footer class="block mx-auto w-full text-center my-4">

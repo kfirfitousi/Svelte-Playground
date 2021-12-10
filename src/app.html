@@ -26,13 +26,6 @@
       content="SvelteKit app fetching data from the SpaceX GraphQL API, deployed to Vercel."
     />
     <meta name="twitter:image" content="/twitter.png" />
-    <script>
-      if (localStorage.dark === 'true' || (!('dark' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark')
-      } else {
-        document.documentElement.classList.remove('dark')
-      }
-    </script>
     %svelte.head%
   </head>
   <body class="bg-gray-200 dark:bg-gray-800">
