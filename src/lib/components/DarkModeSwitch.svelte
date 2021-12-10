@@ -20,9 +20,9 @@
 <button
     on:click={toggleDarkMode}
     type="button"
-    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-xl text-sm p-2.5">
+    class="text-gray-200 dark:text-gray-800 hover:bg-gray-400 dark:hover:bg-gray-600 rounded-xl text-sm p-2.5">
     <svg
-        class="w-5 h-5 inline"
+        class="w-5 h-5"
         class:hidden={dark === 'true' || dark === undefined}
         fill="currentColor"
         viewBox="0 0 20 20"
@@ -30,7 +30,7 @@
         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
     </svg>
     <svg
-        class="w-5 h-5 inline"
+        class="w-5 h-5"
         class:hidden={dark === 'false' || dark === undefined}
         fill="currentColor"
         viewBox="0 0 20 20"
