@@ -12,7 +12,7 @@
 
 <script>
   import '../app.css';
-  import Header from '$lib/components/Header.svelte'
+  import Header from '$lib/components/Header/Header.svelte'
 </script>
 
 <Header></Header>
@@ -28,14 +28,12 @@
     Created with 
     <a class="hover:text-purple-600 dark:hover:text-purple-400 hover:underline text-blue-700 dark:text-blue-200"
       target="_blank"
-      rel="noopener"
       href="https://svelte.dev">
         SvelteKit
     </a>
     and deployed with
     <a class="hover:text-purple-600 dark:hover:text-purple-400 hover:underline text-blue-700 dark:text-blue-200" 
       target="_blank"
-      rel="noopener" 
       href="https://vercel.com">
         ▲ Vercel
     </a>

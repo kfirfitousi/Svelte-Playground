@@ -8,12 +8,12 @@
     })
 
     const toggleDarkMode = () => {
-        localStorage.dark = (dark === 'true') ? 'false' : 'true'
-        dark = localStorage.dark
+        dark = dark === 'true' ? 'false' : 'true'
+        localStorage.dark = dark
 
-        dark === 'true' ? 
-            document.documentElement.classList.add('dark') :
-            document.documentElement.classList.remove('dark')
+        dark === 'true'
+            ? document.documentElement.classList.add('dark')
+            : document.documentElement.classList.remove('dark')
     }
 </script>
 
@@ -23,7 +23,7 @@
     class="text-gray-200 dark:text-gray-800 hover:bg-gray-400 dark:hover:bg-gray-600 rounded-xl text-sm p-2.5">
     <svg
         class="w-5 h-5"
-        class:hidden={dark === 'true' || dark === undefined}
+        class:hidden={dark != 'false'}
         fill="currentColor"
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg">
@@ -31,7 +31,7 @@
     </svg>
     <svg
         class="w-5 h-5"
-        class:hidden={dark === 'false' || dark === undefined}
+        class:hidden={dark != 'true'}
         fill="currentColor"
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg">
