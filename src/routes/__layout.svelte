@@ -13,29 +13,20 @@
 <script>
   import '../app.css';
   import Header from '$lib/components/Header/Header.svelte'
+  import Link from '$lib/components/Shared/Link.svelte'
 </script>
 
 <Header></Header>
 
-<div class="container sm:w-screen lg:w-2/3 xl:w-1/2 mx-auto mt-8 px-12">
-  <main>
-    <slot></slot>
-  </main>
-</div>
+<main class="container sm:w-screen lg:w-2/3 xl:w-1/2 mx-auto mt-8 px-12">
+  <slot></slot>
+</main>
   
 <footer class="block mx-auto w-full text-center my-4">
   <p class="text-gray-800 dark:text-gray-200">
     Created with 
-    <a class="hover:text-purple-600 dark:hover:text-purple-400 hover:underline text-blue-700 dark:text-blue-200"
-      target="_blank"
-      href="https://svelte.dev">
-        SvelteKit
-    </a>
+    <Link href="https://svelte.dev">SvelteKit</Link>
     and deployed with
-    <a class="hover:text-purple-600 dark:hover:text-purple-400 hover:underline text-blue-700 dark:text-blue-200" 
-      target="_blank"
-      href="https://vercel.com">
-        ▲ Vercel
-    </a>
+    <Link href="https://vercel.com">▲ Vercel</Link>
   </p>
 </footer>
