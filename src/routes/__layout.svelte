@@ -14,14 +14,20 @@
   import '../app.css';
   import Header from '$lib/components/Header/Header.svelte'
   import Link from '$lib/components/Shared/Link.svelte'
+  import { navigating } from '$app/stores'
 </script>
 
 <Header></Header>
 
+
 <main class="container sm:w-screen lg:w-2/3 xl:w-1/2 mx-auto mt-8 px-12">
-  <slot></slot>
+  {#if $navigating}
+    <p class="text-center text-gray-800 dark:text-gray-200">Loading...</p>
+  {:else}
+    <slot></slot>
+  {/if}
 </main>
-  
+
 <footer class="block mx-auto w-full text-center my-4">
   <p class="text-gray-800 dark:text-gray-200">
     Created with 

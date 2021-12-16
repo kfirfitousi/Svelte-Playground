@@ -37,7 +37,7 @@
 <script>
   import Link from '$lib/components/Shared/Link.svelte'
 
-  export let launches = [];
+  export let launches
 </script>
 
 <h1 class="mb-4 text-center text-4xl text-gray-800 dark:text-gray-200">SpaceX Launches</h1>
